@@ -18,6 +18,8 @@
       	map.addListener( 'click', function(event){
       		placeMarker(event.latLng);
       	 });
+
+        placeCrimes({{crimes| safe}});
 	}
 	function placeMarker(location){
     if(marker){
@@ -33,6 +35,18 @@
 
 
 	}
+
+  function placeCrimes(crimes){
+    for (i = 0; i < crimes.length; i++) {
+      crime = new google.maps.Marker({
+        position: new google.maps.latLng(crimes[i].latitude, crimes[i].longitude),
+        map: map,
+        title: crimes[i].date + "\n" + crimes[i].category + "\n" + crimes[i].description
+      });
+    }
+  }
+
+
     </script>
   </head>
   <body onload="initialize()">
