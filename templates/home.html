@@ -37,7 +37,6 @@
 	}
 
   function placeCrimes(crimes){
-    console.log(crimes);
     for (i = 0; i < crimes.length; i++) {
       crime = new google.maps.Marker({
         position: new google.maps.LatLng(crimes[i].latitude, crimes[i].longitude),
