@@ -26,7 +26,7 @@ def submitcrime():
     category = request.form.get("category")
     if category not in categories:
         return home()
-        #date
+    #date
     date = format_date(request.form.get("date"))
     if not date:
         return home("Invalid date. Please use yyyy-mm-dd format.")
@@ -51,7 +51,7 @@ def format_date(userdate):
 
 def sanitize_string(userinput):
     whitelist = string.letters + string.digits + "!?$.,;:-'()&"
-    return filter(lambda x: z in whitelist, userinput)
+    return filter(lambda x: x in whitelist, userinput)
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
