@@ -59,7 +59,7 @@
       <h2>Submit new crime</h2>
       {% if error_message %}
         <div id="error"><p>{{error_message}}</p></div>
-      {%endif %}
+      {% endif %}
       <form action="/submitcrime" method="post">
         <label for="category">Category</label>
         {{% for catergory in categories %}}
