@@ -30,3 +30,7 @@ input[type="submit"]{
   float: right;
   width: 25%;
 }
+
+#error{
+  color: red;
+}
